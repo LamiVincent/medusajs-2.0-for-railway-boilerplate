@@ -120,11 +120,11 @@ const medusaConfig = {
          options: {
            channels: ['email'],
            host: process.env.MEDUSA_SMTP_HOST,
-           port: parseInt(process.env.MEDUSA_SMTP_PORT || "587"),
+           port: parseInt(process.env.MEDUSA_SMTP_PORT || "465"),
            user: process.env.MEDUSA_SMTP_USER,
            password: process.env.MEDUSA_SMTP_PASSWORD,
            from: process.env.MEDUSA_SMTP_FROM,
-           secure: false, // 587 = STARTTLS, 465 = true
+           secure: true, // 587 = STARTTLS, 465 = true
          },
        }] : []),
         ]
