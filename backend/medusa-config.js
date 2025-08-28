@@ -114,6 +114,19 @@ const medusaConfig = {
               from: RESEND_FROM_EMAIL,
             },
           }] : []),
+          ...(process.env.MEDUSA_SMTP_HOST ? [{
+         resolve: 'medusa-plugin-notification-smtp',
+         id: 'smtp',
+         options: {
+           channels: ['email'],
+           host: process.env.MEDUSA_SMTP_HOST,
+           port: parseInt(process.env.MEDUSA_SMTP_PORT || "587"),
+           user: process.env.MEDUSA_SMTP_USER,
+           password: process.env.MEDUSA_SMTP_PASSWORD,
+           from: process.env.MEDUSA_SMTP_FROM,
+           secure: false, // 587 = STARTTLS, 465 = true
+         },
+       }] : []),
         ]
       }
     }] : []),

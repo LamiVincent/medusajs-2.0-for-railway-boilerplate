@@ -1,1 +1,5 @@
 .idea/
+backend/.env
+backend/.env.template
+backend/package-lock.json
+storefront/package-lock.json
